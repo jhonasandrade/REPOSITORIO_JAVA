@@ -1,0 +1,51 @@
+import java.io.PrintStream;
+import java.util.Scanner;
+import java.util.Random;
+
+
+public class JogoAdivinhacao{
+    public static void main(String [] args) {
+        PrintStream show = System.out;
+        Scanner scan= new Scanner(System.in);
+        Random gerador = new Random();
+
+
+        int opcao;
+        int escolhe_computador;
+        int escolha_usuario;
+
+        show.println("ola!qual seu nome?");
+        String nome = scan.nextLine();
+        show.println("prazer em conhece-lo"+ nome+"!");
+        show.println(nome +", voce quer jogar com migo?");
+        show.println("\nInforme o numero da sua opcao. ");
+        opcao = scan.nextInt();
+
+        if (opcao == 2){
+              show.println("que pena!QUERIA BRINCAR COM VOCE!!");
+        }else if(opcao == 1){
+            show.println("ok! o jogo e assim ...");
+            show.println("eu vou escolher um numero de 1 a 100:");
+            show.println("nao vou te falar ual e ,voce vai tentar advinhar");
+            show.println("se voce conseguir adivinar ");
+            show.println("voce sera o vencedor!!");
+            
+            escolhe_computador = gerador.nextInt(11);
+
+            show.println("ok,"+ nome +"eu ja escolhe!");
+            show.println("agora tenete adivinhar!");
+
+            do{
+                escolha_usuario = scan.nextInt();
+                if(escolha_usuario != escolhe_computador){
+                    show.println("resposta errada");
+                }else{
+                    show.println("parabens !! voce acertou!!");
+                }
+            }while(escolhe_computador != escolha_usuario);
+            
+
+
+        }
+    }
+}
